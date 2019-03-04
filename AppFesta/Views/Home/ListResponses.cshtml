@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AppFesta.Models.GuestResponse>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ESSAS PESSOAS VAI ESTAR NA UHULL FESTA</title>
+</head>
+<body>
+    <h2>Lista de pessoas que confirmaram presença</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Email</td>
+                <td>Telefone</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(AppFesta.Models.GuestResponse r in Model)
+            {
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Email</td>
+                    <td>@r.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <a asp-action="Index">Voltar ao Início</a>
+</body>
+</html>

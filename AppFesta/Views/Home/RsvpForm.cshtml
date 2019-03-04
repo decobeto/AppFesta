@@ -1,0 +1,104 @@
+﻿@model AppFesta.Models.GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro pra UHULLL FESTA</title>
+</head>
+<body>
+    <div>
+        <form asp-action="RsvpForm" method="post">
+            <p>
+                <label asp-for="Name">Nome:</label>
+                <input asp-for="Name" />
+            </p>
+            <p>
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" />
+            </p>
+            <p>
+                <label asp-for="Idade">Idade:</label>
+                <input asp-for="Idade" />
+            </p>
+            <p>
+                <label asp-for="Phone">Telefone:</label>
+                <input asp-for="Phone" />
+            </p>
+            <p>
+                <label>Endereço:</label>
+            </p>
+            <p>
+                <label asp-for="Street">Rua:</label>
+                <input asp-for="Street" />
+            </p>
+            <p>
+                <label asp-for="Bairro">Bairro:</label>
+                <input asp-for="Bairro" />
+            </p>
+            <p>
+                <label asp-for="Cidade">Cidade:</label>
+                <input asp-for="Cidade" />
+            </p>
+            <p>
+                <label>Estado:</label>
+                <select asp-for="Uf">
+                    <option value="">Escolha seu Estado</option>
+                    <option value="AC">Acre – AC</option>
+                    <option value="AL">Alagoas – AL</option>
+                    <option value="AP">Amapá – AP</option>
+                    <option value="AM">Amazonas – AM</option>
+                    <option value="BA">Bahia – BA</option>
+                    <option value="CE">Ceará – CE</option>
+                    <option value="DF">Distrito Federal – DF</option>
+                    <option value="ES">Espírito Santo – ES</option>
+                    <option value="GO">Goiás – GO</option>
+                    <option value="MA">Maranhão – MA</option>
+                    <option value="MT">Mato Grosso – MT</option>
+                    <option value="MS">Mato Grosso do Sul – MS</option>
+                    <option value="MG">Minas Gerais – MG</option>
+                    <option value="PA">Pará – PA</option>
+                    <option value="PB">Paraíba – PB</option>
+                    <option value="PR">Paraná – PR</option>
+                    <option value="PE">Pernambuco – PE</option>
+                    <option value="PI">Piauí – PI</option>
+                    <option value="RR">Roraima – RR</option>
+                    <option value="RO">Rondônia – RO</option>
+                    <option value="RJ">Rio de Janeiro – RJ</option>
+                    <option value="RN">Rio Grande do Norte – RN</option>
+                    <option value="RS">Rio Grande do Sul – RS</option>
+                    <option value="SC">Santa Catarina – SC</option>
+                    <option value="SP">São Paulo – SP</option>
+                    <option value="SE">Sergipe – SE</option>
+                    <option value="TO">Tocantins – TO</option>
+                </select>
+            </p>
+            <p>
+                <label>Você joga GAMES?</label>
+                <select asp-for="PlayGames">
+                    <option value="">Escolha se você é um gamer</option>
+                    <option value="true">Mas é lógico que sim</option>
+                    <option value="false">Mas é claro que não</option>
+                </select>
+            </p>
+            <p>
+                <label>Confirmar Presença?</label>
+                <select asp-for="WillAttend">
+                    <option value="">Escolha uma opção</option>
+                    <option value="true">Sim, estarei lá</option>
+                    <option value="false">Não, não estarei</option>
+                </select>
+            </p>
+            <button type="submit">Enviar dados</button>
+        </form>
+        <hr />
+        <div>
+            <a asp-action="Index">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>

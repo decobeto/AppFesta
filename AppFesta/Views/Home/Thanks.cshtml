@@ -1,0 +1,34 @@
+﻿@model AppFesta.Models.GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FESTA FESTA FESTA FESTA</title>
+</head>
+<body>
+    <div>
+        <h1>Obrigado, @Model.Name</h1>
+        @if(Model.WillAttend == true)
+        {
+            @:Será muito boa a sua presença.
+        }
+        else
+        {
+            @: Putz Vacilou!!!
+        }
+        <br />
+        <a asp-action="ListResponse">
+            Confira a Lista de Convidados
+        </a>
+        <br />
+        <a asp-action="Index">
+            Voltar ao Inicio
+        </a>
+    </div>
+</body>
+</html>
