@@ -9,25 +9,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ESSAS PESSOAS VAI ESTAR NA UHULL FESTA</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
     <h2>Lista de pessoas que confirmaram presença</h2>
+    <h3>Filtros:</h3>
+    <button asp-action="">Pessoas que são GAMERS</button>
+    <button asp-action="">Pessoas que não são GAMERS</button>
+    <br />
+    <br />
+    <br />
     <table>
         <thead>
             <tr>
-                <td>Nome</td>
-                <td>Email</td>
-                <td>Telefone</td>
+                <td><strong>Nome</strong></td>
+                <td><strong>Email</strong></td>
+                <td><strong>Telefone</strong></td>
+                <td><strong>GAMER</strong></td>
             </tr>
         </thead>
         <tbody>
             @foreach(AppFesta.Models.GuestResponse r in Model)
             {
-                <tr>
-                    <td>@r.Name</td>
-                    <td>@r.Email</td>
-                    <td>@r.Phone</td>
-                </tr>
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Email</td>
+                <td>@r.Phone</td>
+                @if (r.PlayGames == true)
+                {
+                    <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                }
+                else
+                {
+                    <td style="text-align: center;"><i class="fas fa-times"></i></td>
+                }
+
+            </tr>
             }
         </tbody>
     </table>

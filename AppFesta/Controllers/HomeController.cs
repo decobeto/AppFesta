@@ -31,10 +31,14 @@ namespace AppFesta.Controllers
             return View("Thanks", guestResponse);
         }
 
+        [HttpGet]
         public ViewResult ListResponses()
         {
-            return View(Repository.responses.Where(r => r.WillAttend == true));
+            return View("ListResponses",Repository.responses.Where(r => r.WillAttend == true));
         }
+
+
+
 
         /*
         public IActionResult Index()
