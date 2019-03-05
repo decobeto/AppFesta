@@ -10,15 +10,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ESSAS PESSOAS VAI ESTAR NA UHULL FESTA</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <h2>Lista de pessoas que confirmaram presença</h2>
     <h3>Filtros:</h3>
-    <button asp-action="">Pessoas que são GAMERS</button>
-    <button asp-action="">Pessoas que não são GAMERS</button>
+    <button class="botao" asp-action="">Pessoas que são GAMERS</button>
+    <button class="botao" asp-action="">Pessoas que não são GAMERS</button>
     <br />
     <br />
     <br />
+    <iframe src="https://giphy.com/embed/blSTtZehjAZ8I" width="200" height="200" frameBorder="0"></iframe>
     <table>
         <thead>
             <tr>
@@ -29,26 +31,65 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(AppFesta.Models.GuestResponse r in Model)
+            @foreach (AppFesta.Models.GuestResponse r in Model)
             {
-            <tr>
-                <td>@r.Name</td>
-                <td>@r.Email</td>
-                <td>@r.Phone</td>
-                @if (r.PlayGames == true)
-                {
-                    <td style="text-align: center;"><i class="fas fa-check"></i></td>
-                }
-                else
-                {
-                    <td style="text-align: center;"><i class="fas fa-times"></i></td>
-                }
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Email</td>
+                    <td>@r.Phone</td>
+                    @if (r.PlayGames == true)
+                    {
+                        <td style="text-align: center;"><i class="fas fa-check"></i></td>
+                    }
+                    else
+                    {
+                        <td style="text-align: center;"><i class="fas fa-times"></i></td>
+                    }
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
-    <hr />
-    <a asp-action="Index">Voltar ao Início</a>
+    <iframe src="https://giphy.com/embed/blSTtZehjAZ8I" width="200" height="200" frameBorder="0"></iframe>
+    <a class="botao" asp-action="Index">Voltar ao Início</a>
 </body>
 </html>
+
+
+<style>
+    html {
+        text-align: center;
+        background: #fbc531;
+    }
+
+    div.form {
+        border: 7px solid black;
+        padding-bottom: 9em;
+    }
+
+    a, button {
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    iframe, table {
+        float: left;
+        width: 33%;
+    }
+</style>
+
+<script>
+    $('.botao').each(function (i, obj) {
+        var cor = Math.floor(Math.random() * 16677217).toString(16);
+        $(obj).css("background-color", "#" + cor);
+    });
+</script>

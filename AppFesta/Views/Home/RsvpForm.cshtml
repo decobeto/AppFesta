@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro pra UHULLL FESTA</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <div>
+    <div class="form">
         <form asp-action="RsvpForm" method="post">
             <p>
                 <label asp-for="Name">Nome:</label>
@@ -93,12 +94,44 @@
                     <option value="false">Não, não estarei</option>
                 </select>
             </p>
-            <button type="submit">Enviar dados</button>
+            <button class="botao" type="submit">Enviar dados</button>
         </form>
-        <hr />
+        <br />
+        <br />
+        <br />
         <div>
-            <a asp-action="Index">Voltar</a>
+            <a class="botao" asp-action="Index">Voltar</a>
         </div>
     </div>
 </body>
 </html>
+
+
+<style>
+html { text-align: center;
+       background: rgba(241, 169, 160, 1);
+
+}
+
+    div.form {
+        border: 7px solid black;
+        padding-bottom: 9em;
+    }
+
+    a, button {
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+    }   
+</style>
+
+<script>
+    $('.botao').each(function (i, obj) {
+        var cor = Math.floor(Math.random() * 16677217).toString(16);
+        $(obj).css("background-color", "#" + cor);
+    });
+</script>

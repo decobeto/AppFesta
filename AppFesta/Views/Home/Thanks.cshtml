@@ -9,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FESTA FESTA FESTA FESTA</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <div>
+    <div class="form">
         <h1>Obrigado, @Model.Name</h1>
-        @if(Model.WillAttend == true)
+        @if (Model.WillAttend == true)
         {
             @:Será muito boa a sua presença.
         }
@@ -22,13 +23,48 @@
             @: Putz Vacilou!!!
         }
         <br />
-        <a asp-action="ListResponses">
+        <br />
+        <br />
+        <br />
+        <a class="botao" asp-action="ListResponses">
             Confira a Lista de Convidados
         </a>
         <br />
-        <a asp-action="Index">
+        <br />
+        <br />
+        <br />
+        <a class="botao" asp-action="Index">
             Voltar ao Inicio
         </a>
     </div>
 </body>
 </html>
+
+<style>
+    html {
+        text-align: center;
+        background: rgba(224, 130, 131, 1);
+    }
+
+    div.form {
+        border: 7px solid black;
+        padding-bottom: 9em;
+    }
+
+    a, button {
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+    }
+</style>
+
+<script>
+    $('.botao').each(function (i, obj) {
+        var cor = Math.floor(Math.random() * 16677217).toString(16);
+        $(obj).css("background-color", "#" + cor);
+    });
+</script>

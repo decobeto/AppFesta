@@ -9,13 +9,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UHULL FESTA</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div>
-        <p>@ViewBag.Greeting  Meus Nobres Festeiros!</p>
+        <h1>@ViewBag.Greeting  Meus Nobres Festeiros!</h1>
         <iframe src="https://giphy.com/embed/MS3XuWjQV1FiU" width="347" height="480" frameBorder="0"></iframe>
-        <p>O curso de Ciências da Computação está promovendo uma festa do Balacobaco, venha fazer parte você também dessa Patuscada!!!!</p>
-        <a asp-action="RsvpForm">Confirmar Presença</a>
+        <h3>O curso de Ciências da Computação está promovendo uma festa do Balacobaco, venha fazer parte você também dessa Patuscada!!!!</h3>
+        <a class="botao" asp-action="RsvpForm">Confirmar Presença</a>
     </div>
 </body> 
 </html>
+
+<style>
+    html{
+        text-align: center;
+    }
+
+    div{
+        border: 7px solid black;
+        padding-bottom: 9em;
+    }
+
+    a {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 2em;
+    }
+</style>
+
+<script>
+    $('.botao').each(function(i, obj) {
+      var cor = Math.floor(Math.random()*16677217).toString(16);
+      $(obj).css("background-color", "#" + cor);
+    });
+</script>
