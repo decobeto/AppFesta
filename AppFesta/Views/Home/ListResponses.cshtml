@@ -15,8 +15,8 @@
 <body>
     <h2>Lista de pessoas que confirmaram presença</h2>
     <h3>Filtros:</h3>
-    <button class="botao" asp-action="">Pessoas que são GAMERS</button>
-    <button class="botao" asp-action="">Pessoas que não são GAMERS</button>
+    <a class="botao" asp-action="MostraGamers">Pessoas que são GAMERS</a>
+    <a class="botao" asp-action="MostraNaoGamers">Pessoas que não são GAMERS</a>
     <br />
     <br />
     <br />
@@ -51,7 +51,7 @@
         </tbody>
     </table>
     <iframe src="https://giphy.com/embed/blSTtZehjAZ8I" width="200" height="200" frameBorder="0"></iframe>
-    <a class="botao" asp-action="Index">Voltar ao Início</a>
+    <a  asp-action="Index" class="botao">Voltar ao Início</a>
 </body>
 </html>
 
@@ -75,6 +75,7 @@
         text-decoration: none;
         display: inline-block;
         font-size: 1em;
+        float: inherit;
     }
 
     table {

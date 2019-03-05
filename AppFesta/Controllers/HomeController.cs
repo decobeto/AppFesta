@@ -37,7 +37,17 @@ namespace AppFesta.Controllers
             return View("ListResponses",Repository.responses.Where(r => r.WillAttend == true));
         }
 
+        [HttpGet]
+        public ActionResult MostraGamers()
+        {
+            return View("ListResponses", Repository.responses.Where(r => r.PlayGames == true));
+        }
 
+        [HttpGet]
+        public ActionResult MostraNaoGamers()
+        {
+            return View("ListResponses", Repository.responses.Where(r => r.PlayGames == false));
+        }
 
 
         /*
